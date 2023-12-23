@@ -1,0 +1,17 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": " node app.js add --title=\\\"My title\\\" --body=\\\"This is my first note\\\"\\n"
+  },
+  "devDependencies": {
+    "validator": "^13.7.0",
+    "chalk": "^4.1.2",
+    "yargs": "^17.3.1"
+  },
+  "author": "al.martirosyan <al.martirosyan@tinkoff.ru>",
+  "license": "ISC"
+}

@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "embedme "
+  },
+  "devDependencies": {
+    "embedme": "^1.22.0"
+  }
+}

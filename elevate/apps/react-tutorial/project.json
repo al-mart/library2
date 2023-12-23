@@ -1,0 +1,84 @@
+{
+    "name": "react-tutorial",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "apps/react-tutorial/src",
+    "projectType": "application",
+    "targets": {
+        "build": {
+            "executor": "@nrwl/webpack:webpack",
+            "outputs": ["{options.outputPath}"],
+            "defaultConfiguration": "production",
+            "options": {
+                "compiler": "babel",
+                "outputPath": "dist/apps/react-tutorial",
+                "index": "apps/react-tutorial/src/index.html",
+                "baseHref": "/",
+                "main": "apps/react-tutorial/src/main.tsx",
+                "polyfills": "apps/react-tutorial/src/polyfills.ts",
+                "tsConfig": "apps/react-tutorial/tsconfig.app.json",
+                "assets": [
+                    "apps/react-tutorial/src/favicon.ico",
+                    "apps/react-tutorial/src/assets"
+                ],
+                "styles": [],
+                "scripts": [],
+                "webpackConfig": "@nrwl/react/plugins/webpack"
+            },
+            "configurations": {
+                "development": {
+                    "extractLicenses": false,
+                    "optimization": false,
+                    "sourceMap": true,
+                    "vendorChunk": true
+                },
+                "production": {
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/react-tutorial/src/environments/environment.ts",
+                            "with": "apps/react-tutorial/src/environments/environment.prod.ts"
+                        }
+                    ],
+                    "optimization": true,
+                    "outputHashing": "all",
+                    "sourceMap": false,
+                    "namedChunks": false,
+                    "extractLicenses": true,
+                    "vendorChunk": false
+                }
+            }
+        },
+        "serve": {
+            "executor": "@nrwl/webpack:dev-server",
+            "defaultConfiguration": "development",
+            "options": {
+                "buildTarget": "react-tutorial:build",
+                "hmr": true
+            },
+            "configurations": {
+                "development": {
+                    "buildTarget": "react-tutorial:build:development"
+                },
+                "production": {
+                    "buildTarget": "react-tutorial:build:production",
+                    "hmr": false
+                }
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": ["apps/react-tutorial/**/*.{ts,tsx,js,jsx}"]
+            }
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+            "options": {
+                "jestConfig": "apps/react-tutorial/jest.config.ts",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": []
+}

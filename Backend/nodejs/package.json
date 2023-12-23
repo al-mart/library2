@@ -1,0 +1,22 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "Node js library",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "watch": "nodemon books/beggining_node_js/event-emitter.js",
+    "embed": "embedme process.argv ",
+    "start": "node app.js read "
+  },
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "@types/node": "^17.0.18",
+    "@types/express": "^4.17.13"
+  },
+  "author": "al.martirosyan <al.martirosyan@tinkoff.ru>",
+  "license": "ISC"
+}

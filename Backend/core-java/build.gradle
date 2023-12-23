@@ -1,0 +1,14 @@
+apply plugin: 'java'
+
+configurations.all {
+    resolutionStrategy {
+        failOnVersionConflict()
+    }
+}
+
+dependencies {
+}
+
+repositories {
+    mavenCentral()
+}
